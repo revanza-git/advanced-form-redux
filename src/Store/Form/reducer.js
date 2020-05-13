@@ -2,24 +2,21 @@ import { combineReducers } from "redux";
 import * as constants from "./constants";
 
 const initialState = {
-  view: {
+  spaj: {
     status: null,
+    title: "title",
     data: {
-      title: "ORIGINAL TITLE",
-      field: "ZIZOU PRESIDENT",
-    },
-  },
-  edit: {
-    status: null,
-    data: {
-      title: "ORIGINAL TITLE",
-      field: "ZIZOU PRESIDENT",
+      tipe_dokumen: "",
+      no_spaj: "",
+      kantor_pemasaran: "",
+      no_proposal: "",
+      marketing_program: "",
     },
     changed: null,
   },
 };
 
-function viewReducer(state = initialState.view, action) {
+function viewReducer(state = initialState.spaj, action) {
   switch (action.type) {
     case constants.EDIT_FORM_SUCCESS:
       return {
@@ -32,7 +29,7 @@ function viewReducer(state = initialState.view, action) {
   }
 }
 
-function editReducer(state = initialState.edit, action) {
+function editReducer(state = initialState.spaj, action) {
   switch (action.type) {
     case constants.ADD_CHANGE:
       const newForm = { ...state.data };
@@ -54,6 +51,13 @@ function editReducer(state = initialState.edit, action) {
         changed: false,
         data: action.form,
         status: constants.EDIT_FORM_SUCCESS,
+      };
+    case constants.UPDATE_FORM_TITLE:
+      const newTitle = { ...state.title };
+      newTitle[action.fieldName] = action.fieldValue;
+      return {
+        ...state,
+        title: newTitle,
       };
     default:
       return state;

@@ -2,8 +2,11 @@ export function getFormView(state) {
   return state.form.view.data;
 }
 
+export function getFormTitle(state) {
+  return state.form.edit.title;
+}
+
 export function getFormEdit(state) {
-  console.log(state);
   return state.form.edit.data;
 }
 

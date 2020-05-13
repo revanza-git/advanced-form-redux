@@ -1,9 +1,16 @@
-import { getFormEdit, getFormView } from "./selectors";
+import { getFormEdit, getFormView, getFormTitle } from "./selectors";
 import {
   editFormSuccess,
   editFormPending,
   setNewEditableForm,
 } from "./actions";
+
+export function setupTitle() {
+  return function _titleForm(dispatch, getState) {
+    const form = getFormTitle(getState());
+    dispatch(setNewEditableForm(form));
+  };
+}
 
 export function setupForm() {
   return function _resetForm(dispatch, getState) {

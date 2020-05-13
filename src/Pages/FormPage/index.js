@@ -18,8 +18,6 @@ class FormPage extends Component {
       saveChanges,
     } = this.props;
 
-    console.log(this.props);
-
     if (!formEdit || !formView) {
       return <span>LOADING</span>;
     }

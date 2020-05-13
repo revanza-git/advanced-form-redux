@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 
 const TextInput = ({ handleChange, title, value }) => (
   <div>
-    <br />
-    {title}
-    <br />
     <input
       type="text"
       value={value}

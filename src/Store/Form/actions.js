@@ -19,3 +19,9 @@ export const editFormSuccess = (form) => ({
   type: constants.EDIT_FORM_SUCCESS,
   form,
 });
+
+export const updateFormTitle = (fieldName, fieldValue) => ({
+  type: constants.UPDATE_FORM_TITLE,
+  fieldName,
+  fieldValue,
+});
