@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About
 
-basic form with react-redux, saving and discard changes.
+Advanced form with react-redux.
 
 ## Available Scripts
 
