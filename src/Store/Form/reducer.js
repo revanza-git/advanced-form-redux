@@ -2,21 +2,25 @@ import { combineReducers } from "redux";
 import * as constants from "./constants";
 
 const initialState = {
-  spaj: {
+  summary: {
     status: null,
-    title: "title",
+    title: "",
     data: {
-      tipe_dokumen: "",
-      no_spaj: "",
-      kantor_pemasaran: "",
-      no_proposal: "",
-      marketing_program: "",
+      policy_holder_name: "",
+      policy_holder_gender: "",
+      policy_holder_birth_date: "",
+      policy_holder_age: "",
+      policy_holder_insured_relationship: "",
+      insured_name: "",
+      insured_gender: "",
+      insured_birth_date: "",
+      insured_age: "",
     },
     changed: null,
   },
 };
 
-function viewReducer(state = initialState.spaj, action) {
+function viewReducer(state = initialState.summary, action) {
   switch (action.type) {
     case constants.EDIT_FORM_SUCCESS:
       return {
@@ -29,14 +33,14 @@ function viewReducer(state = initialState.spaj, action) {
   }
 }
 
-function editReducer(state = initialState.spaj, action) {
+function editReducer(state = initialState.summary, action) {
   switch (action.type) {
     case constants.ADD_CHANGE:
       const newForm = { ...state.data };
       newForm[action.fieldName] = action.fieldValue;
       return {
         ...state,
-        changed: true,
+        change: false,
         data: newForm,
       };
     case constants.SET_UP_EDIT_FORM:
@@ -48,16 +52,9 @@ function editReducer(state = initialState.spaj, action) {
     case constants.EDIT_FORM_SUCCESS:
       return {
         ...state,
-        changed: false,
+        changed: true,
         data: action.form,
         status: constants.EDIT_FORM_SUCCESS,
-      };
-    case constants.UPDATE_FORM_TITLE:
-      const newTitle = { ...state.title };
-      newTitle[action.fieldName] = action.fieldValue;
-      return {
-        ...state,
-        title: newTitle,
       };
     default:
       return state;
