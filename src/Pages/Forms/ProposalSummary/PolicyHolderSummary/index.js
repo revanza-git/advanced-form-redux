@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import TextBox from "../../../../Components/Textbox";
+import Datepicker from "../../../../Components/Datepicker";
 
 const MainInfo = ({ data, changeHandler }) => (
   <div>
@@ -24,13 +25,12 @@ const MainInfo = ({ data, changeHandler }) => (
         Value={data.policy_holder_gender}
         HandleChange={changeHandler}
       />
-      <TextBox
+      <Datepicker
         labelCol="2"
         labelVal="Tanggal Lahir"
         StateKey="policy_holder_birth_date"
         TextCol="10"
-        TextType="text"
-        Value={data.policy_holder_birth_date}
+        StartDate={data.policy_holder_birth_date}
         HandleChange={changeHandler}
       />
       <TextBox

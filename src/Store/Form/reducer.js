@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import * as constants from "./constants";
+import moment from "moment";
 
 const initialState = {
   summary: {
@@ -8,13 +9,14 @@ const initialState = {
     data: {
       policy_holder_name: "",
       policy_holder_gender: "",
-      policy_holder_birth_date: "",
+      policy_holder_birth_date: moment(new Date()).format("YYYY-MM-DD"),
       policy_holder_age: "",
       policy_holder_insured_relationship: "",
       insured_name: "",
       insured_gender: "",
-      insured_birth_date: "",
+      insured_birth_date: moment(new Date()).format("YYYY-MM-DD"),
       insured_age: "",
+      payment_method: "",
     },
     changed: null,
   },

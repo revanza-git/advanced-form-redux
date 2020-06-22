@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PolicyHolderSummary from "../Forms/ProposalSummary/PolicyHolderSummary";
 import InsuredSummary from "../Forms/ProposalSummary/InsuredSummary";
+import PaymentSummary from "../Forms/ProposalSummary/PaymentSummary";
+import ProductSummary from "../Forms/ProposalSummary/ProductSummary";
 import SaveBox from "../../Components/SaveBox";
 import Alerts from "../../Components/Alerts";
 import "./index.css";
@@ -57,6 +59,18 @@ class SummaryPage extends Component {
               <Card.Header>INFORMASI TERTANGGUNG</Card.Header>
               <Card.Body>
                 <InsuredSummary data={formEdit} changeHandler={addChange} />
+              </Card.Body>
+            </Card>
+            <Card>
+              <Card.Header>PAYMENT METHOD</Card.Header>
+              <Card.Body>
+                <PaymentSummary data={formEdit} changeHandler={addChange} />
+              </Card.Body>
+            </Card>
+            <Card>
+              <Card.Header>DAFTAR PLAN</Card.Header>
+              <Card.Body>
+                <ProductSummary data={formEdit} changeHandler={addChange} />
               </Card.Body>
             </Card>
             <SaveBox onSaveAction={saveChanges} />

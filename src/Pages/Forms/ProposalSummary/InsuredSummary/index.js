@@ -1,10 +1,10 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import TextBox from "../../../../Components/Textbox";
+import Datepicker from "../../../../Components/Datepicker";
 
 const MainInfo = ({ data, changeHandler }) => (
   <div>
-    {console.log(data)}
     <Form>
       <TextBox
         labelCol="2"
@@ -24,13 +24,12 @@ const MainInfo = ({ data, changeHandler }) => (
         Value={data.insured_gender}
         HandleChange={changeHandler}
       />
-      <TextBox
+      <Datepicker
         labelCol="2"
         labelVal="Tanggal Lahir"
         StateKey="insured_birth_date"
         TextCol="10"
-        TextType="text"
-        Value={data.insured_birth_date}
+        StartDate={data.insured_birth_date}
         HandleChange={changeHandler}
       />
       <TextBox

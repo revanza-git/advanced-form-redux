@@ -1,6 +1,7 @@
 .card-header {
   background-color: #7bc697 !important;
   color: white;
+  font-weight: bold;
 }
 
 .card .card {
